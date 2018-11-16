@@ -20,5 +20,5 @@ from user import views as user_view
 urlpatterns = [
     url('admin/', admin.site.urls),
     url('register/', user_view.register),
-    url('', include('game.urls'))
+    url('game/', include('game.urls'))
 ]
