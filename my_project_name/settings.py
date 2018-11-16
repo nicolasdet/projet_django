@@ -31,6 +31,8 @@ ALLOWED_HOSTS = ['192.168.99.100']
 # Application definition
 
 INSTALLED_APPS = [
+    'user.apps.UserConfig',
+    'game.apps.GameConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
