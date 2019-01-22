@@ -1,153 +1,92 @@
 <div id="gameboard_opponent">
+  <div id="oponent_space_terrain_1" class="gameboard_space">
+    {% include "game/card_front.html" %}
+  </div>
+  <div id="oponent_space_terrain_2" class="gameboard_space">
+    {% include "game/card_front.html" %}
+  </div>
+  <div id="oponent_space_terrain_3" class="gameboard_space">
+    {% include "game/card_front.html" %}
+
+  </div>
+  <div id="oponent_space_terrain_4" class="gameboard_space">
+    {% include "game/card_front.html" %}
+  </div>
 
   <div id="oponent_space_deck" class="gameboard_space">
-    <div class="card card_back"></div>
-  </div>
-  <div id="oponent_space_magic_1" class="gameboard_space">
-    <div class="card card_front">
-      <div class="card_image"></div>
-      <div class="card_text">
-      </div>
-    </div>
-  </div>
-  <div id="oponent_space_magic_2" class="gameboard_space">
-    <div class="card card_front">
-      <div class="card_image"></div>
-      <div class="card_text">
-      </div>
-    </div>
-  </div>
-  <div id="oponent_space_magic_3" class="gameboard_space">
-    <div class="card card_front">
-      <div class="card_image"></div>
-      <div class="card_text">
-      </div>
-    </div>
-  </div>
-  <div id="oponent_space_magic_4" class="gameboard_space">
-    <div class="card card_front">
-      <div class="card_image"></div>
-      <div class="card_text">
-      </div>
-    </div>
+    {% include "game/card_back.html" %}
+
   </div>
   <div id="oponent_space_graveyard" class="gameboard_space">
-    <div class="card card_front">
-      <div class="card_image"></div>
-      <div class="card_text">
-      </div>
-    </div>
+    {% include "game/card_front.html" %}
+
   </div>
   <div id="oponent_space_monster_1" class="gameboard_space">
-    <div class="card card_front">
-      <div class="card_image"></div>
-      <div class="card_text">
-      </div>
-    </div>
+    {% include "game/card_front.html" %}
+
   </div>
   <div id="oponent_space_monster_2" class="gameboard_space">
-    <div class="card card_front">
-      <div class="card_image"></div>
-      <div class="card_text">
-      </div>
-    </div>
+    {% include "game/card_front.html" %}
+
   </div>
   <div id="oponent_space_monster_3" class="gameboard_space">
-    <div class="card card_front">
-      <div class="card_image"></div>
-      <div class="card_text">
-      </div>
-    </div>
+    {% include "game/card_front.html" %}
+
   </div>
   <div id="oponent_space_monster_4" class="gameboard_space">
-    <div class="card card_front">
-      <div class="card_image"></div>
-      <div class="card_text">
-      </div>
-    </div>
+    {% include "game/card_front.html" %}
+
   </div>
 </div>
 <br/>
 <br/>
 <div id="gameboard">
   <div id="space_graveyard" class="gameboard_space">
-    <div class="card card_front">
-      <div class="card_image"></div>
-      <div class="card_text">
-      </div>
-    </div>
+    {% include "game/card_front.html" %}
+
   </div>
   <div id="space_monster_1" class="gameboard_space">
-    <div class="card card_front">
-      <div class="card_image"></div>
-      <div class="card_text">
-      </div>
-    </div>
+    {% include "game/card_front.html" %}
+
   </div>
   <div id="space_monster_1" class="gameboard_space">
-    <div class="card card_front">
-      <div class="card_image"></div>
-      <div class="card_text">
-      </div>
-    </div>
+    {% include "game/card_front.html" %}
+
   </div>
   <div id="space_monster_1" class="gameboard_space">
-    <div class="card card_front">
-      <div class="card_image"></div>
-      <div class="card_text">
-      </div>
-    </div>
+    {% include "game/card_front.html" %}
+
   </div>
   <div id="space_monster_1" class="gameboard_space">
-    <div class="card card_front">
-      <div class="card_image"></div>
-      <div class="card_text">
-      </div>
-    </div>
+    {% include "game/card_front.html" %}
+
   </div>
   <div id="space_deck" class="gameboard_space">
-    <div class="card_back">
-    </div>
+    {% include "game/card_back.html" %}
+
   </div>
   <div id="space_magic_1" class="gameboard_space">
-    <div class="card card_front">
-      <div class="card_image"></div>
-      <div class="card_text">
-      </div>
-    </div>
+    {% include "game/card_front.html" %}
+
   </div>
   <div id="space_magic_2" class="gameboard_space">
-    <div class="card card_front">
-      <div class="card_image"></div>
-      <div class="card_text">
-      </div>
-    </div>
+    {% include "game/card_front.html" %}
+
   </div>
   <div id="space_magic_3" class="gameboard_space">
-    <div class="card card_front">
-      <div class="card_image"></div>
-      <div class="card_text">
-      </div>
-    </div>
+    {% include "game/card_front.html" %}
   </div>
   <div id="space_magic_4" class="gameboard_space">
-    <div class="card card_front">
-      <div class="card_image"></div>
-      <div class="card_text">
-      </div>
-    </div>
+    {% include "game/card_front.html" %}
   </div>
 </div>
 <div id="hand_user">
-  <div class="hand_space">
-    <div class="card card_front">
-      <div class="card_image"></div>
-      <div class="card_text">
-      </div>
-    </div>
-  </div>
+  {% for card in player_hand %}
+    {% include "game/card_front.html" %}
+  {% empty %}
+    {% include "game/card_front.html" %}
+  {% endfor %}
 </div>
-
 </div>
 <script src="/static/game.js">
 </script>

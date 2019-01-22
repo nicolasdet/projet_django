@@ -677,12 +677,14 @@ input, textarea, select {
 }
 
 .gameboard_space, .card_div_content {
-    padding: 15px;
     width: 200px;
 }
 
 .gameboard_space {
     background-image: linear-gradient(45deg, #0070ff, #00ddff);
+}
+.card_div_content {
+    padding: 15px;
 }
 
 .hand_space {
@@ -709,9 +711,8 @@ div.card {
     width: 100%;
 
 }
-
-.card {
-    max-width: 200px;
-
+.no_card{
+    opacity: 0;
 }
+
 

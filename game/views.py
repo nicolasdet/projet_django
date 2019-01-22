@@ -35,7 +35,7 @@ class GameInstance:
         self.game = game
         self.player_1 = -1
         self.player_2 = -1
-        self.turn = random.randint(1, 2)
+        self.turn = 1  # random.randint(1, 2)
         self.player_turn = 0
         self.player_1_zone = self.player_2_zone = {
             'hand': [],
@@ -105,7 +105,17 @@ class GameInstance:
         self.player_turn = 1
         return self
 
+    def draw(self):
+        card = self.player_1_zone["deck"].pop()
+        if not card:
+            self.end()
+        self.player_1_zone["hand"].append(card)
+        return self
+
     def shuffle_deck(self):
+        return self
+
+    def end(self):
         return self
 
     def shuffle_deck_1(self):
@@ -113,6 +123,16 @@ class GameInstance:
 
     def shuffle_deck_2(self):
         return self
+
+    def get_player_zone(self):
+        if self.player_turn == "1":
+            return self.player_1_zone
+        return self.player_2_zone
+
+    def get_opponent_zone(self):
+        if self.player_turn == "1":
+            return self.player_2_zone
+        return self.player_1_zone
 
 
 class CardInstance:
@@ -260,8 +280,20 @@ def joingame(request):
     g.join(request.user.id, deck)
     request.session["game_id"] = g.get_game_id()
     request.session["player_turn"] = g.get_player_turn()
-    return render(request, 'game/gameboard.html', {})
+    g.draw()
+    g.draw()
+    g.draw()
+    g.draw()
+    g.save()
+    return render(request, 'game/gameboard.html', {
+        "player_hand": g.get_player_zone()[0],
+        "opponent": g.get_opponent_zone()
+    })
 
 
 def gameboard(request):
-    return render(request, 'game/gameboard.html', {})
+    g = GameInstance(request.session["game_id"])
+    return render(request, 'game/gameboard.html', {
+        "player_hand": g.get_player_zone().hand,
+        "opponent": g.get_opponent_zone()
+    })
