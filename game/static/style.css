@@ -716,7 +716,9 @@ div.card {
 .no_card{
     opacity: 0;
 }
-
+.button{
+    height: auto; !important;
+}
 
 .terrain_board {
  border: 2px solid grey;
