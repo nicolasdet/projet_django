@@ -25,7 +25,6 @@ urlpatterns = [
     path('deck/update/<int:pk>/', DeckUpdateView.as_view(), name="game-decks-update"),
     path('play/', views.play, name="game-play"),
     path('card/buy/', views.buy, name="game-buy"),
-    path('card/buy/<slug:pk>/', views.buy, name="game-buy"),
     path('start/', views.startgameform, name="game-start-form"),
     path('join/', views.joingameform, name="game-join-form"),
     path('play/turn/', views.gameboard, name="game-turn"),

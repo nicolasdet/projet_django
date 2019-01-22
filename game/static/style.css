@@ -743,3 +743,21 @@ div.card {
 .mb-3 {
     margin-bottom: 30px;
 }
+.ml-1p {
+    margin-left: 10%;
+}
+
+.ml-01p {
+    margin-left: 5%;
+}
+
+.deck_list_item {
+    border: 1px solid grey;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 80%;
+    margin-left: 10%;
+}

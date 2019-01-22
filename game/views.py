@@ -253,7 +253,7 @@ def buy(request, pk=""):
         Card.objects.create_card(request.user)
         Card.objects.create_card(request.user)
         return redirect("game-decks")
-
+    Card.objects.create_card(request.user)
     return render(request, 'game/buy.html')
 
 def startgameform(request):
