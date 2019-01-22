@@ -681,7 +681,9 @@ input, textarea, select {
 }
 
 .gameboard_space {
+    /*
     background-image: linear-gradient(45deg, #0070ff, #00ddff);
+    */
 }
 .card_div_content {
     padding: 15px;
@@ -716,3 +718,26 @@ div.card {
 }
 
 
+.terrain_board {
+ border: 2px solid grey;
+ text-align: center;
+}
+.zone_flex {
+    display: flex;
+}
+
+.pt86 {
+    margin-top: 86px;
+}
+
+.button{
+    height: auto; !important
+}
+
+.mt-3 {
+    margin-top: 30px;
+}
+
+.mb-3 {
+    margin-bottom: 30px;
+}

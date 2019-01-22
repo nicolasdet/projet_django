@@ -4,9 +4,9 @@
 <head>
   <title>My Super Game</title>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="{% static "style.css" %}" type="text/css">
-
   <link rel="stylesheet" href="{% static "spirit/stylesheets/styles.all.min.css" %}">
+
+  <link rel="stylesheet" href="{% static "style.css" %}" type="text/css">
 
   <script src="{% static "spirit/scripts/all.min.js" %}"></script>
 
@@ -25,11 +25,14 @@
           <li><a href="{% url 'login' %}">Login</a></li>
           <li><a href="{% url 'register' %}">Register</a></li>
         {% endif %}
-          <li class="last"><a href="/forum">Forum</a></li>
+          <li><a href="/forum">Forum</a></li>
+          {% if user.is_authenticated %}
+          <li class="last"><a href="{% url 'logout' %}">Logout</a></li>
+        {% endif %}
       </ul>
     </nav>
     <div id="hgroup">
-      <h1><a href="#">CardGame</a></h1>
+      <h1><a href="/">CardGame</a></h1>
       <h2>CardGame le premier jeu de carte en ligne</h2>
     </div>
   </header>
@@ -51,9 +54,8 @@
 <!-- Footer -->
 <div class="wrapper row3">
   <footer id="footer" class="clear">
-    <p class="fl_left">Copyright &copy; 2018 - All Rights Reserved - <a href="#">Domain Name</a></p>
-    <p class="fl_right">Template by <a target="_blank" href="https://www.os-templates.com/"
-                                       title="Free Website Templates">OS Templates</a></p>
+    <p class="fl_left">Copyright &copy; 2018 - All Rights Reserved - <a href="#">Card Game</a></p>
+
   </footer>
 </div>
 </body>

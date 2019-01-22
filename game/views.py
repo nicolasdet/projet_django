@@ -10,6 +10,7 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from django.db.models import Count
 from django.db import models
 import random
+from django.shortcuts import redirect
 
 from django.http import HttpResponse
 
@@ -93,6 +94,7 @@ class GameInstance:
         self.player_2_zone['deck'] = data
         self.player_turn = 2
         self.load()
+
         # player 1 draw 4
         # player_2_draw_5
         return self
@@ -188,14 +190,11 @@ class CardInstance:
             return False
         return self.attack
 
-
 def home(request):
     return render(request, 'game/home.html')
 
-
 def play(request):
     return render(request, 'game/play.html')
-
 
 class DeckListView(ListView):
     model = Deck
@@ -204,10 +203,8 @@ class DeckListView(ListView):
         decks = Deck.objects.filter(owner=self.request.user)
         return decks
 
-
 class DeckDetailView(DetailView):
     model = Deck
-
 
 class DeckUpdateView(UpdateView):
     model = Deck
@@ -220,7 +217,6 @@ class DeckUpdateView(UpdateView):
     def form_invalid(self, form):
         return super().form_invalid(form)
 
-
 class DeckCreateView(CreateView):
     model = Deck
     form_class = DeckForm
@@ -232,25 +228,38 @@ class DeckCreateView(CreateView):
     def form_invalid(self, form):
         return super().form_invalid(form)
 
-
 def buy(request, pk=""):
     data = request.get_full_path().split("/")[-1]
     count = 0
     if data == "bronze":
-        count = 3
-    if data == "silver":
-        count = 7
-    if data == "gold":
-        count = 15
-    Card.objects.create_card(request.user)
-    return render(request, 'game/buy.html')
+        Card.objects.create_card(request.user)
+        Card.objects.create_card(request.user)
+        return redirect("game-decks")
 
+    if data == "silver":
+        Card.objects.create_card(request.user)
+        Card.objects.create_card(request.user)
+        Card.objects.create_card(request.user)
+        Card.objects.create_card(request.user)
+        return redirect("game-decks")
+
+    if data == "gold":
+        Card.objects.create_card(request.user)
+        Card.objects.create_card(request.user)
+        Card.objects.create_card(request.user)
+        Card.objects.create_card(request.user)
+        Card.objects.create_card(request.user)
+        Card.objects.create_card(request.user)
+        Card.objects.create_card(request.user)
+        Card.objects.create_card(request.user)
+        return redirect("game-decks")
+
+    return render(request, 'game/buy.html')
 
 def startgameform(request):
     return render(request, 'game/create_form.html', {
         'decks': Deck.objects.filter(owner=request.user),
     })
-
 
 def joingameform(request):
     return render(request, 'game/join_form.html', {
@@ -258,7 +267,6 @@ def joingameform(request):
         'games': [{"id": i.id, "title": User.objects.filter(id=i.player_one).first().username} for i in
                   Game.objects.filter(player_two__isnull=True)]
     })
-
 
 def startgame(request):
     deck = request.GET.get("deck")
@@ -271,7 +279,6 @@ def startgame(request):
     request.session["game_id"] = g.get_game_id()
     request.session["player_turn"] = g.get_player_turn()
     return render(request, 'game/waiting.html', {})
-
 
 def joingame(request):
     p1 = request.GET.get("game")
@@ -289,7 +296,6 @@ def joingame(request):
         "player_hand": g.get_player_zone()[0],
         "opponent": g.get_opponent_zone()
     })
-
 
 def gameboard(request):
     g = GameInstance(request.session["game_id"])

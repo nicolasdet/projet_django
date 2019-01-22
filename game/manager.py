@@ -45,7 +45,7 @@ class CardManager(models.Manager):
             ])
             effect = [random.choice(effects)]
             attack = random.randint(0, 25)
-            title = effect + str(attack)
+            title = "".join(effect) + str(attack)
         if type == "terrain":
             attack = random.randint(0, 3)
             title = "terrain - " + element + " - " + str(attack)
