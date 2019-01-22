@@ -35,7 +35,7 @@ class GameInstance:
         self.game = game
         self.player_1 = -1
         self.player_2 = -1
-        self.turn = 1  # random.randint(1, 2)
+        self.turn = 0
         self.player_turn = 0
         self.player_1_zone = self.player_2_zone = {
             'hand': [],
@@ -264,7 +264,6 @@ def startgame(request):
     deck = request.GET.get("deck")
     if deck is None:
         return HttpResponse("<br>".join(request.POST.__dict__.keys()))
-
     bot = request.GET.get("bot")
     g = GameInstance()
     g.create(request.user.id, deck)

@@ -1,7 +1,17 @@
 {% extends "game/base.html" %}
 {% block content %}
   <div id="game_div">
-    <button id="game_create">Create game</button>
-    <button id="game_join">Join Game</button>
+  <div id="game_div_content">
+    <div id="game_create" class="button">
+      <span class="button__mask"></span>
+      <span class="button__text">Create game</span>
+      <span class="button__text button__text--bis">Create game</span>
+    </div>
+    <div id="game_join" class="button">
+      <span class="button__mask"></span>
+      <span class="button__text">Join Game</span>
+      <span class="button__text button__text--bis">Join Game</span>
+    </div>
+  </div>
   </div>
 {% endblock %}
