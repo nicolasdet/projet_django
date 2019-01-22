@@ -1,0 +1,27 @@
+<form id="join_game_form">
+{% csrf_token %}
+
+  <select name="deck">
+    {% for deck in decks %}
+      <option value="{{ deck.id }}">{{ deck.title }}</option>
+    {% endfor %}
+  </select>
+  <select name="game">
+    {% for game in games %}
+      <option value="{{ game.id }}">{{ game.title }}</option>
+    {% empty %}
+    {% endfor %}
+  </select>
+  <button>Start Game</button>
+</form>
+<script>
+  var join_game_form = document.getElementById('join_game_form');
+  join_game_form.addEventListener("submit", function (e) {
+    if (e.preventDefault) e.preventDefault();
+    ajax('/game/play/join', {
+      "deck": e.target.children.deck.value,
+      "game": e.target.children.game.value,
+    });
+    return false;
+  });
+</script>

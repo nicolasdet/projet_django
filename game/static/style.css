@@ -1,0 +1,717 @@
+/*
+HTML 5 Template Name: Basic 76
+File: Layout CSS
+Author: OS Templates
+Author URI: https://www.os-templates.com/
+Licence: <a href="https://www.os-templates.com/template-terms">Website Template Licence</a>
+*/
+
+html {
+    overflow-y: scroll;
+}
+
+/* Forces a scrollbar when the viewport is larger than the websites content - CSS3 */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color: #919191;
+    background-color: #232323;
+}
+
+.clear:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+}
+
+.clear {
+    display: block;
+    clear: both;
+}
+
+html[xmlns] .clear {
+    display: block;
+}
+
+* html .clear {
+    height: 1%;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+}
+
+code {
+    font-weight: normal;
+    font-style: normal;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.fl_left {
+    float: left;
+}
+
+.fl_right {
+    float: right;
+}
+
+img {
+    margin: 0;
+    padding: 0;
+    border: none;
+    line-height: normal;
+    vertical-align: middle;
+}
+
+.imgholder, .imgl, .imgr {
+    padding: 4px;
+    border: 1px solid #D6D6D6;
+    text-align: center;
+}
+
+.imgl {
+    float: left;
+    margin: 0 15px 15px 0;
+    clear: left;
+}
+
+.imgr {
+    float: right;
+    margin: 0 0 15px 15px;
+    clear: right;
+}
+
+/*----------------------------------------------HTML 5 Overrides-------------------------------------*/
+
+address, article, aside, figcaption, figure, footer, header, nav, section {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+q {
+    display: block;
+    padding: 0 10px 8px 10px;
+    color: #979797;
+    background-color: #ECECEC;
+    font-style: italic;
+    line-height: normal;
+}
+
+q:before {
+    content: '� ';
+    font-size: 26px;
+}
+
+q:after {
+    content: ' �';
+    font-size: 26px;
+    line-height: 0;
+}
+
+/* ----------------------------------------------Wrapper-------------------------------------*/
+
+div.wrapper {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.row1, .row1 a {
+    color: #C0BAB6;
+    background-color: #333333;
+}
+
+.row2 {
+    color: #979797;
+    background-color: #FFFFFF;
+}
+
+.row2 a {
+    color: #FF9900;
+    background-color: #FFFFFF;
+}
+
+.row3, .row3 a {
+    color: #919191;
+    background-color: #232323;
+}
+
+/*----------------------------------------------Generalise-------------------------------------*/
+
+#header, #container, #footer {
+    display: block;
+    width: 960px;
+    margin: 0 auto;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+    line-height: normal;
+}
+
+address {
+    font-style: normal;
+}
+
+blockquote, q {
+    display: block;
+    padding: 8px 10px;
+    color: #979797;
+    background-color: #ECECEC;
+    font-style: italic;
+    line-height: normal;
+}
+
+blockquote:before, q:before {
+    content: '� ';
+    font-size: 26px;
+}
+
+blockquote:after, q:after {
+    content: ' �';
+    font-size: 26px;
+    line-height: 0;
+}
+
+form, fieldset, legend {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+legend {
+    display: none;
+}
+
+input, textarea, select {
+    font-size: 12px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.one_third, .two_third, .three_third {
+    display: block;
+    float: left;
+    margin: 0 30px 0 0;
+}
+
+.one_third {
+    width: 300px;
+}
+
+.two_third {
+    width: 630px;
+}
+
+.three_third {
+    width: 960px;
+    float: none;
+    margin-right: 0;
+    clear: both;
+}
+
+.lastbox {
+    margin-right: 0;
+}
+
+/*----------------------------------------------Header-------------------------------------*/
+
+#header {
+}
+
+#header #hgroup {
+    float: left;
+    padding: 20px 0;
+}
+
+#header #hgroup h1, #header #hgroup h2 {
+    font-weight: normal;
+    text-transform: none;
+}
+
+#header #hgroup h1 {
+    font-size: 36px;
+}
+
+#header #hgroup h2 {
+    font-size: 13px;
+}
+
+#header form {
+    display: block;
+    width: 290px;
+    float: right;
+    margin: 40px 0 0 0;
+    padding: 0;
+}
+
+#header form input {
+    display: block;
+    float: left;
+    width: 200px;
+    margin: 0;
+    padding: 5px;
+    color: #C0BAB6;
+    background-color: #232323;
+    border: 1px solid #666666;
+}
+
+#header form #sf_submit {
+    display: block;
+    float: right;
+    width: 70px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    background-color: #FF9900;
+    border: none;
+    cursor: pointer;
+}
+
+#header nav {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 20px 0;
+    border-bottom: 1px solid #DEDEDE;
+}
+
+#header nav ul {
+}
+
+#header nav li {
+    display: inline;
+    margin-right: 25px;
+    text-transform: uppercase;
+}
+
+#header nav li.last {
+    margin-right: 0;
+}
+
+#header nav li a {
+}
+
+#header nav li a:hover {
+    color: #FF9900;
+    background-color: #333333;
+}
+
+/*----------------------------------------------Content Area-------------------------------------*/
+
+#container {
+    padding: 30px 0;
+}
+
+#container section {
+    display: block;
+    width: 100%;
+    margin: 0 0 30px 0;
+    padding: 0;
+}
+
+#container .last {
+    margin: 0;
+}
+
+#container .more {
+    text-align: right;
+}
+
+/* ------Slider-----*/
+
+#container #slider {
+}
+
+#container #slider figure {
+}
+
+#container #slider figure img {
+    float: left;
+    width: 630px;
+    height: 300px;
+}
+
+#container #slider figure figcaption {
+    display: block;
+    float: right;
+    width: 260px;
+    height: 260px;
+    padding: 20px;
+    color: #989898;
+    background-color: #333333;
+    line-height: 1.8em;
+}
+
+#container #slider figure figcaption a {
+    color: #FF9900;
+    background-color: #333333;
+}
+
+#container #slider figure h2 {
+    padding-bottom: 8px;
+    border-bottom: 1px solid #DEDEDE;
+}
+
+#container #slider figure footer {
+}
+
+/* ------Main Content-----*/
+
+#container #homepage {
+    display: block;
+    width: 100%;
+    line-height: 1.6em;
+}
+
+#container #homepage .services {
+    margin: 0;
+    font-size: 12px;
+}
+
+#container #homepage .services article {
+}
+
+#container #homepage .services article h2 {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#container #homepage .services article img {
+    float: left;
+    padding: 4px;
+    border: 1px solid #D6D6D6;
+}
+
+#container #homepage .services article p {
+    display: block;
+    float: right;
+    width: 200px;
+    margin: 0;
+    padding: 0;
+}
+
+#container #homepage .services article footer {
+    padding-top: 10px;
+    clear: both;
+}
+
+#container #homepage .spacer {
+    display: block;
+    width: 100%;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    clear: both;
+}
+
+/*----------------------------------------------Footer-------------------------------------*/
+
+#footer {
+    padding: 20px 0;
+}
+
+#footer p {
+    margin: 0;
+    padding: 0;
+}
+
+.main_container {
+    min-height: 70vh;
+    margin-left: 10vw;
+    width: 80vw;
+    padding-top: 30px;
+}
+
+.inp {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    max-width: 280px;
+}
+
+.inp .label {
+    position: absolute;
+    top: 16px;
+    left: 0;
+    font-size: 16px;
+    color: #9098a9;
+    font-weight: 500;
+    transform-origin: 0 0;
+    transition: all 0.2s ease;
+}
+
+.inp .border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: #07f;
+    transform: scaleX(0);
+    transform-origin: 0 0;
+    transition: all 0.15s ease;
+}
+
+.inp input {
+    -webkit-appearance: none;
+    width: 100%;
+    border: 0;
+    font-family: inherit;
+    padding: 12px 0;
+    height: 48px;
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 2px solid #c8ccd4;
+    background: none;
+    border-radius: 0;
+    color: #223254;
+    transition: all 0.15s ease;
+}
+
+.inp input:hover {
+    background: rgba(34, 50, 84, 0.03);
+}
+
+.inp input:not(:placeholder-shown) + span {
+    color: #5a667f;
+    transform: translateY(-26px) scale(0.75);
+}
+
+.inp input:focus {
+    background: none;
+    outline: none;
+}
+
+.inp input:focus + span {
+    color: #07f;
+    transform: translateY(-26px) scale(0.75);
+}
+
+.inp input:focus + span + .border {
+    transform: scaleX(1);
+}
+
+.button {
+    touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: inline-block;
+    border: .2em solid;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    opacity: 0.6;
+    color: black;
+}
+
+.button__text {
+    display: block;
+    padding: 1em 2em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.button__text:before {
+    content: attr(title);
+}
+
+.button__text--bis {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-transform: translateX(-1em);
+    transform: translateX(-1em);
+    opacity: 0;
+}
+
+.button__mask {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: black;
+    -webkit-transform: translateX(-100%) rotate(45deg);
+    transform: translateX(-100%) rotate(45deg);
+    transition: all 0.3s;
+}
+
+.button:hover {
+    opacity: 1;
+}
+
+.button:hover .button__text {
+    -webkit-animation: fx-text .3s ease-out;
+    animation: fx-text .3s ease-out;
+}
+
+.button:hover .button__text--bis {
+    -webkit-animation: fx-text-bis .3s ease-out;
+    animation: fx-text-bis .3s ease-out;
+}
+
+.button:hover .button__mask {
+    -webkit-animation: fx-mask .3s ease-out;
+    animation: fx-mask .3s ease-out;
+}
+
+.button:active {
+    opacity: 1;
+    background: black;
+    color: inherit;
+}
+
+@-webkit-keyframes fx-mask {
+    0% {
+        -webkit-transform: translateX(-100%) rotate(45deg);
+        transform: translateX(-100%) rotate(45deg);
+    }
+    100% {
+        -webkit-transform: translateX(100%) rotate(45deg);
+        transform: translateX(100%) rotate(45deg);
+    }
+}
+
+@keyframes fx-mask {
+    0% {
+        -webkit-transform: translateX(-100%) rotate(45deg);
+        transform: translateX(-100%) rotate(45deg);
+    }
+    100% {
+        -webkit-transform: translateX(100%) rotate(45deg);
+        transform: translateX(100%) rotate(45deg);
+    }
+}
+
+@-webkit-keyframes fx-text {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: translateX(1em);
+        transform: translateX(1em);
+        opacity: 0;
+    }
+}
+
+@keyframes fx-text {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: translateX(1em);
+        transform: translateX(1em);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes fx-text-bis {
+    0% {
+        -webkit-transform: translateX(-1em);
+        transform: translateX(-1em);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fx-text-bis {
+    0% {
+        -webkit-transform: translateX(-1em);
+        transform: translateX(-1em);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+#gameboard, #gameboard_opponent, #hand_user, .card_div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+.gameboard_space, .card_div_content {
+    padding: 15px;
+    width: 200px;
+}
+
+.gameboard_space {
+    background-image: linear-gradient(45deg, #0070ff, #00ddff);
+}
+
+.hand_space {
+    padding: 15px;
+    width: 200px;
+}
+
+div.card {
+    width: 100%;
+    height: 300px;
+}
+
+.card_front {
+    background-color: #ebebeb;
+}
+
+.card_back {
+    background-color: #414141;
+}
+
+.card_image {
+    background-color: #414141;
+    height: 100px;
+    width: 100%;
+
+}
+
+.card {
+    max-width: 200px;
+
+}
+

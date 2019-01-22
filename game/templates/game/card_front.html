@@ -1,0 +1,47 @@
+{% load to_and %}
+<div class="card_div_content">
+{% if card.type == "monster" %}
+  <div class="card card_front">
+    <div class="card_image">
+      <img class="card_image" src="/static/img/monster.png">
+    </div>
+    <div class="card_text">
+      <span>{{ card.title }}</span><br/>
+      <span> Effects :
+        {{ card.effect|to_and }}<br/>
+    </span>
+      <span>Cost : {{ card.cost }}</span><br/>
+      <span>Element : {{ card.element }}</span><br/>
+      <span>atk: {{ card.attack }}/ def:{{ card.defense }}</span><br/>
+    </div>
+  </div>
+{% elif card.type == "magic" %}
+  <div class="card card_front">
+    <div class="card_image">
+      <img class="card_image" src="/static/img/magic.jpg">
+    </div>
+    <div class="card_text">
+      <span>{{ card.title }}</span><br/>
+      <span> Effects :
+        {{ card.effect|to_and }}<br/>
+      </span>
+      <span>Cost : {{ card.cost }}</span><br/>
+      <span>Element : {{ card.element }}</span><br/>
+    </div>
+  </div>
+{% elif card.type == "terrain" %}
+  <div class="card card_front">
+    <div class="card_image">
+      <img class="card_image" src="/static/img/terrain.png">
+    </div>
+    <div class="card_text">
+      <span>{{ card.title }}</span><br/>
+      </span>
+      <span>lvl : {{ card.attack }}</span><br/>
+      <span>Element : {{ card.element }}</span><br/>
+    </div>
+  </div>
+{% else %}
+  <div class="card card_back"></div>
+{% endif %}
+</div>

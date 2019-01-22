@@ -1,0 +1,22 @@
+<form id="create_game_form">
+{% csrf_token %}
+  <select name="deck">
+    {% for deck in decks %}
+      <option value="{{ deck.id }}">{{ deck.title }}</option>
+    {% endfor %}
+  </select>
+  Bot : <input type="checkbox" name="bot">
+  <button>Start Game</button>
+</form>
+
+<script>
+  var create_game_form = document.getElementById('create_game_form');
+  create_game_form.addEventListener("submit", function (e) {
+    if (e.preventDefault) e.preventDefault();
+    console.log(e.target.children.deck.value);
+    ajax('/game/play/start/', {
+      "deck": e.target.children.deck.value,
+    });
+    return false;
+  });
+</script>

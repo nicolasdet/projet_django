@@ -1,20 +1,66 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
-    <head>
-        <!-- En-tête de la page -->
-        <meta charset="utf-8" />
-        <title>Titre</title>
-    </head>
+<html lang="en" dir="ltr">
+<head>
+  <title>My Super Game</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="{% static "style.css" %}" type="text/css">
 
-    <body>
+  <link rel="stylesheet" href="{% static "spirit/stylesheets/styles.all.min.css" %}">
+
+  <script src="{% static "spirit/scripts/all.min.js" %}"></script>
+
+
+</head>
+<body>
+<div class="wrapper row1">
+  <header id="header" class="clear">
+    <nav>
+      <ul>
+        {% if user.is_authenticated %}
+          <li><a href="{% url 'game-decks' %}">Decks</a></li>
+          <li><a href="{% url 'game-play' %}">Jouer</a></li>
+          <li><a href="{% url 'game-buy' %}">+ de Cartes</a></li>
+        {% else %}
+          <li><a href="{% url 'login' %}">Login</a></li>
+          <li><a href="{% url 'register' %}">Register</a></li>
+        {% endif %}
+          <li class="last"><a href="/forum">Forum</a></li>
+      </ul>
+    </nav>
+    <div id="hgroup">
+      <h1><a href="#">CardGame</a></h1>
+      <h2>CardGame le premier jeu de carte en ligne</h2>
+    </div>
+  </header>
+</div>
+<!-- content -->
+<div class="wrapper row2">
+  <div class="main_container">
     {% if messages %}
       {% for message in messages %}
-          <div class="alert alert-{{ message.tags }}">
+        <div class="alert alert-{{ message.tags }}">
           {{ message }}
-          </div>
+        </div>
       {% endfor %}
     {% endif %}
-      {% block content %}
-      {% endblock %}
-    </body>
+    {% block content %}
+    {% endblock %}
+  </div>
+</div>
+<!-- Footer -->
+<div class="wrapper row3">
+  <footer id="footer" class="clear">
+    <p class="fl_left">Copyright &copy; 2018 - All Rights Reserved - <a href="#">Domain Name</a></p>
+    <p class="fl_right">Template by <a target="_blank" href="https://www.os-templates.com/"
+                                       title="Free Website Templates">OS Templates</a></p>
+  </footer>
+</div>
+</body>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script src="{% static "script.js" %}"></script>
+
 </html>

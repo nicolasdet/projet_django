@@ -1,5 +1,5 @@
-@import url("/static/cached/styles.css");
-@import url("/static/styles_root.css");
+@import url("/game/static/cached/styles.css");
+@import url("/game/static/styles_root.css");
 body {
-    background: #d3d6d8 url(/static/cached/img/relative.png);
+    background: #d3d6d8 url(/game/static/cached/img/relative.png);
 }

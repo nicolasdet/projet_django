@@ -1,0 +1,16 @@
+{% extends "game/base.html" %}
+{% block content %}
+  {% with 'bronze silver gold' as list %}
+    {% for pack_lvl in list.split %}
+      <a href="{% url 'game-buy' %}{{ pack_lvl }}">
+        <div class="button">
+          <span class="button__mask"></span>
+          <span class="button__text">Buy {{ pack_lvl }} pack</span>
+          <span class="button__text button__text--bis">Buy bronze pack</span>
+        </div>
+      </a>
+    {% endfor %}
+  {% endwith %}
+
+{% endblock %}
+

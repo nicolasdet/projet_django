@@ -1,0 +1,12 @@
+{% extends "game/base.html" %}
+{% block content %}
+  <div class="card_div">
+  {% for card in object.cards.all %}
+    {% include "game/card_front.html" %}
+  {% empty %}
+    <li>You have no decks, click on the button bellow to create one</li>
+  {% endfor %}
+  <a href="{% url 'game-decks-update' deck.id %}">edit</a>
+  </div>
+{% endblock %}
+

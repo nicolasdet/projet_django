@@ -1,0 +1,17 @@
+{% extends "game/base.html" %}
+{% block content %}
+  {% for deck in object_list %}
+    <li><a href="{% url 'game-deck' deck.id %}">{{ deck.id }}: {{ deck.title }}</a></li>
+  {% empty %}
+    <li>You have no decks, click on the button bellow to create one</li>
+  {% endfor %}
+  <br/>
+  <a href="{% url 'game-decks-create' %}">
+    <div class="button">
+      <span class="button__mask"></span>
+      <span class="button__text">Create new deck</span>
+      <span class="button__text button__text--bis">Create new deck</span>
+    </div>
+  </a>
+{% endblock %}
+
